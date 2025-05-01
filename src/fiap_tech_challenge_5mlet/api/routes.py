@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends
+from fastapi.responses import HTMLResponse
 from typing import Literal
 from ..scraper import (
     get_comercializacao_data,
@@ -17,9 +18,47 @@ from ..auth import (
 router = APIRouter()
 
 
-@router.get("/", tags=["Root"])
+@router.get("/", 
+            response_class=HTMLResponse,
+            tags=["Root"])
 def read_root():
-    return {"message": "API is working!"}
+        return """
+     <html>
+        <head>
+            <title>🍇 FIAP Tech Challenge 5MLET</title>
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                    background-color: #f4f4f9;
+                    color: #333;
+                }
+                h1 {
+                    font-size: 6rem;
+                    color: #4A148C;
+                }
+                p {
+                    font-size: 2.5rem;
+                    margin-top: 12px;
+                }
+                a {
+                    text-decoration: none;
+                    color: #2196F3;
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>🍇 FIAP Tech Challenge 5MLET API</h1>
+            <p><b>Welcome to the Embrapa Vitivinicultura data API 🎉</b></p>
+            <p>🔐 Authenticated endpoints available at <a href='/docs'>/docs</a></p>
+        </body>
+    </html>
+    """
 
 
 # Create Endpoint: GET /comercializacao
