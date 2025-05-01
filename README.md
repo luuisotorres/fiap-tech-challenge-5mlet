@@ -3,6 +3,16 @@
 [![Run on Render](https://img.shields.io/badge/Run%20on-Render-2f3241?logo=render&logoColor=white&style=for-the-badge)]()
 
 ![In Construction](https://img.shields.io/badge/status-in--construction-yellow?style=for-the-badge)
+---
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![Poetry](https://img.shields.io/badge/Poetry-1.6.1-4B5162?style=for-the-badge&logo=python)
+
+> A FastAPI project to serve production, processing, commercialization, import, and export data from [Vitivinicultura Embrapa](http://vitibrasil.cnpuv.embrapa.br/).
+
+This project was built as part of the Machine Learning Engineering postgrad challenge at [FIAP](https://github.com/fiap). It uses `Poetry`, `FastAPI`, and a custom scraping pipeline with JWT authentication.
+
+---
 
 ## Table of Contents
 
@@ -16,14 +26,6 @@
 - [Deployment (Render)](#deployment-render)
 - [Authors](#authors)
 - [License](#license)
----
-![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
-![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
-![Poetry](https://img.shields.io/badge/Poetry-1.6.1-4B5162?style=for-the-badge&logo=python)
-
-> A FastAPI project to serve production, processing, commercialization, import, and export data from [Vitivinicultura Embrapa](http://vitibrasil.cnpuv.embrapa.br/).
-
-This project was built as part of the Machine Learning Engineering postgrad challenge at [FIAP](https://github.com/fiap). It uses `Poetry`, `FastAPI`, and a custom scraping pipeline with JWT authentication.
 
 ---
 

@@ -22,7 +22,7 @@ router = APIRouter()
             response_class=HTMLResponse,
             tags=["Root"])
 def read_root():
-        return """
+    return """
      <html>
         <head>
             <title>🍇 FIAP Tech Challenge 5MLET</title>
@@ -38,11 +38,11 @@ def read_root():
                     color: #333;
                 }
                 h1 {
-                    font-size: 6rem;
+                    font-size: 4rem;
                     color: #4A148C;
                 }
                 p {
-                    font-size: 2.5rem;
+                    font-size: 1.8rem;
                     margin-top: 12px;
                 }
                 a {
