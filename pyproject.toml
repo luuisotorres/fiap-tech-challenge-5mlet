@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "fiap-tech-challenge-5mlet"
+version = "0.1.0"
+description = "FastAPI application to retrieve and serve vitiviniculture data from Embrapa."
+authors = ["Luís Fernando Torres <luuisotorres@icloud.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "fiap_tech_challenge_5mlet", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+fastapi = ">=0.115.0,<0.116.0"
+uvicorn = ">=0.34.0,<0.35.0"
+pandas = ">=2.2.0,<3.0.0"
+pyjwt = ">=2.10.0,<3.0.0"
+requests = "^2.32.3"
+bs4 = "^0.0.2"
+dotenv = "^0.9.9"
+pydantic-settings = "^2.9.1"
+
+[build-system]
+requires = ["poetry-core>=1.5.0"]
+build-backend = "poetry.core.masonry.api"
