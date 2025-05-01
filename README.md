@@ -1,6 +1,6 @@
 # FIAP Tech Challenge — Vitivinicultura Embrapa API
 
-[![Run on Render](https://img.shields.io/badge/Run%20on-Render-2f3241?logo=render&logoColor=white&style=for-the-badge)]()
+[![Run on Render](https://img.shields.io/badge/Run%20on-Render-2f3241?logo=render&logoColor=white&style=for-the-badge)](https://fiap-tech-challenge-5mlet.onrender.com)
 
 ![In Construction](https://img.shields.io/badge/status-in--construction-yellow?style=for-the-badge)
 ---
@@ -198,28 +198,23 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 ## Deployment (Render)
 
-Use the included `render.yaml`.
+This API is live and publicly accessible via [Render](https://render.com), a platform that makes it easy to deploy web apps, APIs, and background workers with minimal configuration.
 
-```yaml
-buildCommand: |
-  pip install poetry
-  poetry install --no-dev
-startCommand: poetry run uvicorn fiap_tech_challenge_5mlet.app:app --host 0.0.0.0 --port 10000
-```
-
-Set the following in Render’s dashboard under environment:
-
-- `JWT_SECRET_KEY`
-- `JWT_ALGORITHM`
-- `JWT_EXP_DELTA_SECONDS`
-- `TEST_USERNAME`
-- `TEST_PASSWORD`
+👉 **[Try it on Render](https://fiap-tech-challenge-5mlet.onrender.com)** — no setup required, just explore the live API!
 
 ---
 
 ## Authors
 
+[Izabelly de Oliveira Menezes](https://github.com/izabellyomenezes)
+
+[Larissa Diniz](https://github.com/Ldiniz737)
+
 [Luis Fernando Torres](https://github.com/luuisotorres)
+
+[Rafael Callegari](https://github.com/rafaelcallegari)
+
+[Renato Inomata](https://github.com/renatoinomata)
 
 ---
 
