@@ -37,8 +37,7 @@ def parse_exportacao(html: str) -> list[dict]:
         results.append({
             "country": country,
             "quantity_kg": float(quantity) if quantity != "-" else None,
-            "value_usd": float(value) if value != "-" else None,
-            "subproducts": [] 
+            "value_usd": float(value) if value != "-" else None
         })
 
     tfoot = table.find("tfoot", class_="tb_total")
@@ -51,8 +50,7 @@ def parse_exportacao(html: str) -> list[dict]:
             results.append({
                 "country": "Total",
                 "quantity_kg": float(total_quantity),
-                "value_usd": float(total_value),
-                "subproducts": [] 
+                "value_usd": float(total_value)
             })
 
     if not results:

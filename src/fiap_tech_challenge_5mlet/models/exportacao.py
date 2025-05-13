@@ -9,8 +9,8 @@ class ExportacaoSubproduct(BaseModel):
 
 class ExportacaoItem(BaseModel):
     country: str
-    quantity_kg: Union[float, None] 
-    subproducts: List[ExportacaoSubproduct]
+    quantity_kg: Union[float, None]
+    value_usd: Union[float, None]
 
 
 class ExportacaoTotal(BaseModel):
