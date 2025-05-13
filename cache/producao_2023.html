@@ -88,7 +88,7 @@
             </p>
           </form>
           <script>
-            var btn = 'opt_04';
+            var btn = 'opt_02';
             var item = document.querySelector('button[value=' + btn + ']');
             item.setAttribute('id','btn_active');
           </script>
@@ -103,7 +103,7 @@
         <td class='col_center'>
           <div class='div_content'>
             <p class='subtitle_1'>Banco de dados de uva, vinho e derivados</p>
-            <p class='subtitle_2'>Comercialização de vinhos e derivados no Rio Grande do Sul</p>
+            <p class='subtitle_2'>Produção de vinhos, sucos e derivados do Rio Grande do Sul</p>
             
     <table class='tb_base tb_header no_print'>
       <tr>
@@ -116,10 +116,10 @@
               <button name='ano' type='submit' value='1970'>&laquo;</button>
               <button name='ano' type='submit' value='2022' onclick='if(this.value<1970){this.value=1970}'>&lsaquo;</button>
               <button id='neutral' disabled='disabled'>&nbsp;</button>
-              <button name='ano' type='submit' value='2024' onclick='if(this.value>2023){this.value=2023}'>&rsaquo;</button>
+              <button name='ano' type='submit' value='2024' onclick='if(this.value>2023){this.value=2023}'>&rsaquo;</button> 
               <button name='ano' type='submit' value='2023'>&raquo;</button>
-              <input type='hidden' name='opcao' value='opt_04'>
-            </p>
+              <input type='hidden' name='opcao' value='opt_02'>
+            </p> 
           </form>
         </td>
         <td>
@@ -128,7 +128,7 @@
               <label class='lbl_pesq'>Ano: [1970-2023] </label> <br>
               <input class='text_pesq' type='number' name='ano' value='' min='1970' max='2023' onkeydown='return event.keyCode !== 69' autocomplete='off' required>&nbsp;
               <input class='subm_pesq' type='submit' value='Ok'>   
-              <input type='hidden' name='opcao' value='opt_04'>
+              <input type='hidden' name='opcao' value='opt_02'>
             </p>
           </form>
         </td>
@@ -136,7 +136,7 @@
     </table>
   
     <div class='content_center'> 
-      <p class='text_center'> Comercialização de vinhos e derivados  [2023] </p>
+      <p class='text_center'> Produção de vinhos, sucos e derivados  [2023] </p>
       
     <table class='tb_base tb_dados'>
       <thead>
@@ -154,7 +154,7 @@
                 VINHO DE MESA
               </td> 
               <td class='tb_item'>
-                187.016.848
+                169.762.429
               </td> 
             
         </tr>   
@@ -162,10 +162,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Tinto
+                Tinto
               </td> 
               <td class='tb_subitem'>
-                165.097.539
+                139.320.884
               </td> 
             
         </tr>   
@@ -173,10 +173,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Rosado
+                Branco
               </td> 
               <td class='tb_subitem'>
-                2.520.748
+                27.910.299
               </td> 
             
         </tr>   
@@ -184,54 +184,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Branco
+                Rosado
               </td> 
               <td class='tb_subitem'>
-                19.398.561
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_item'>
-                VINHO FINO DE MESA
-              </td> 
-              <td class='tb_item'>
-                18.589.310
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Tinto
-              </td> 
-              <td class='tb_subitem'>
-                12.450.606
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Rosado
-              </td> 
-              <td class='tb_subitem'>
-                1.214.583
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Branco
-              </td> 
-              <td class='tb_subitem'>
-                4.924.121
+                2.531.246
               </td> 
             
         </tr>   
@@ -239,10 +195,43 @@
         <tr>
         
               <td class='tb_item'>
-                VINHO FRIZANTE
+                VINHO FINO DE MESA (VINIFERA)
               </td> 
               <td class='tb_item'>
-                2.843.600
+                46.268.556
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Tinto
+              </td> 
+              <td class='tb_subitem'>
+                23.615.783
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Branco
+              </td> 
+              <td class='tb_subitem'>
+                20.693.437
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Rosado
+              </td> 
+              <td class='tb_subitem'>
+                1.959.336
               </td> 
             
         </tr>   
@@ -250,20 +239,64 @@
         <tr>
         
               <td class='tb_item'>
-                VINHO ORGÂNICO
+                SUCO
               </td> 
               <td class='tb_item'>
-                9.123
+                67.045.238
               </td> 
             
         </tr>   
         
         <tr>
         
-              <td class='tb_item'>
-                VINHO ESPECIAL
+              <td class='tb_subitem'>
+                Suco de uva integral
               </td> 
-              <td class='tb_item'>
+              <td class='tb_subitem'>
+                38.122.173
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Suco de uva concentrado
+              </td> 
+              <td class='tb_subitem'>
+                28.216.760
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Suco de uva adoçado
+              </td> 
+              <td class='tb_subitem'>
+                94.587
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Suco de uva orgânico
+              </td> 
+              <td class='tb_subitem'>
+                611.718
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Suco de uva reconstituído
+              </td> 
+              <td class='tb_subitem'>
                 -
               </td> 
             
@@ -271,44 +304,11 @@
         
         <tr>
         
-              <td class='tb_subitem'>
-                  Tinto
-              </td> 
-              <td class='tb_subitem'>
-                -
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Rosado
-              </td> 
-              <td class='tb_subitem'>
-                -
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Branco
-              </td> 
-              <td class='tb_subitem'>
-                -
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
               <td class='tb_item'>
-                ESPUMANTES
+                DERIVADOS
               </td> 
               <td class='tb_item'>
-                29.381.635
+                174.716.647
               </td> 
             
         </tr>   
@@ -316,10 +316,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Espumante  Moscatel
+                Espumante
               </td> 
               <td class='tb_subitem'>
-                9.771.698
+                65.525
               </td> 
             
         </tr>   
@@ -327,10 +327,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Espumante
+                Espumante moscatel
               </td> 
               <td class='tb_subitem'>
-                19.609.379
+                14.744
               </td> 
             
         </tr>   
@@ -338,117 +338,7 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Espumante Orgânico
-              </td> 
-              <td class='tb_subitem'>
-                558
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_item'>
-                SUCO DE UVAS
-              </td> 
-              <td class='tb_item'>
-                166.708.720
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Suco Natural Integral
-              </td> 
-              <td class='tb_subitem'>
-                129.419.407
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Suco Adoçado
-              </td> 
-              <td class='tb_subitem'>
-                128.599
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Suco Reprocessado/reconstituido
-              </td> 
-              <td class='tb_subitem'>
-                34.402.925
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Suco Orgânico
-              </td> 
-              <td class='tb_subitem'>
-                932.154
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Outros sucos de uvas
-              </td> 
-              <td class='tb_subitem'>
-                1.825.635
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_item'>
-                SUCO DE UVAS CONCENTRADO
-              </td> 
-              <td class='tb_item'>
-                37.852.507
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_item'>
-                OUTROS PRODUTOS COMERCIALIZADOS
-              </td> 
-              <td class='tb_item'>
-                29.889.342
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Outros vinhos (sem informação detalhada)
-              </td> 
-              <td class='tb_subitem'>
-                8.152
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Agrin (fermentado, acetico misto)
+                Base espumante
               </td> 
               <td class='tb_subitem'>
                 -
@@ -459,10 +349,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Aguardente de vinho 50°gl
+                Base espumante moscatel
               </td> 
               <td class='tb_subitem'>
-                111
+                6.734.590
               </td> 
             
         </tr>   
@@ -470,7 +360,62 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Alcool vinico
+                Base Champenoise champanha
+              </td> 
+              <td class='tb_subitem'>
+                1.552.243
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Base Charmat champanha
+              </td> 
+              <td class='tb_subitem'>
+                5.418.118
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Bebida de uva
+              </td> 
+              <td class='tb_subitem'>
+                1.627
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Polpa de uva
+              </td> 
+              <td class='tb_subitem'>
+                1.388.251
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Mosto simples
+              </td> 
+              <td class='tb_subitem'>
+                157.848.983
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Mosto concentrado
               </td> 
               <td class='tb_subitem'>
                 -
@@ -481,7 +426,18 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Bagaceira (graspa)
+                Mosto de uva com bagaço
+              </td> 
+              <td class='tb_subitem'>
+                7.784
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Mosto dessulfitado
               </td> 
               <td class='tb_subitem'>
                 -
@@ -492,21 +448,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Base champenoise champanha
+                Mistelas
               </td> 
               <td class='tb_subitem'>
-                66.290
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Base charmat champanha
-              </td> 
-              <td class='tb_subitem'>
-                184.040
+                600
               </td> 
             
         </tr>   
@@ -514,21 +459,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Base espumante moscatel
+                Néctar de uva
               </td> 
               <td class='tb_subitem'>
-                722.984
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Bebida de uva
-              </td> 
-              <td class='tb_subitem'>
-                16.780
+                70.976
               </td> 
             
         </tr>   
@@ -536,106 +470,7 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Borra líquida
-              </td> 
-              <td class='tb_subitem'>
-                72.600
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Borra seca
-              </td> 
-              <td class='tb_subitem'>
-                53.220
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Brandy (conhaque)
-              </td> 
-              <td class='tb_subitem'>
-                4.506
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Cooler
-              </td> 
-              <td class='tb_subitem'>
-                4.321.881
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Coquetel com vinho
-              </td> 
-              <td class='tb_subitem'>
-                397.156
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Destilado de vinho
-              </td> 
-              <td class='tb_subitem'>
-                245
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Filtrado doce
-              </td> 
-              <td class='tb_subitem'>
-                2.366.601
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Jeropiga
-              </td> 
-              <td class='tb_subitem'>
-                346
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Mistelas
-              </td> 
-              <td class='tb_subitem'>
-                1.668
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Mosto concentrado
+                Licorosos
               </td> 
               <td class='tb_subitem'>
                 -
@@ -646,18 +481,7 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Mosto de uva
-              </td> 
-              <td class='tb_subitem'>
-                359.626
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Mosto sulfitado
+                Compostos
               </td> 
               <td class='tb_subitem'>
                 -
@@ -668,21 +492,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Nectar de uva
+                Jeropiga
               </td> 
               <td class='tb_subitem'>
-                3.604.413
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Outros produtos
-              </td> 
-              <td class='tb_subitem'>
-                7.459.271
+                4.500
               </td> 
             
         </tr>   
@@ -690,95 +503,7 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Polpa de uva
-              </td> 
-              <td class='tb_subitem'>
-                1.331.651
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Preparado líquido para refresco
-              </td> 
-              <td class='tb_subitem'>
-                17.178
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Refrigerante +50% suco
-              </td> 
-              <td class='tb_subitem'>
-                501.876
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Sangria
-              </td> 
-              <td class='tb_subitem'>
-                84.157
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Vinagre balsamico
-              </td> 
-              <td class='tb_subitem'>
-                338.926
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Vinagre duplo
-              </td> 
-              <td class='tb_subitem'>
-                1.769.130
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Vinagre simples
-              </td> 
-              <td class='tb_subitem'>
-                5.047.280
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Vinho acetificado
-              </td> 
-              <td class='tb_subitem'>
-                194.020
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Vinho base para espumantes
+                Filtrado
               </td> 
               <td class='tb_subitem'>
                 -
@@ -789,21 +514,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Vinho composto
+                Frisante
               </td> 
               <td class='tb_subitem'>
-                981
-              </td> 
-            
-        </tr>   
-        
-        <tr>
-        
-              <td class='tb_subitem'>
-                  Vinho licoroso
-              </td> 
-              <td class='tb_subitem'>
-                421.974
+                -
               </td> 
             
         </tr>   
@@ -811,10 +525,10 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Vinho leve
+                Vinho leve
               </td> 
               <td class='tb_subitem'>
-                132.064
+                -
               </td> 
             
         </tr>   
@@ -822,10 +536,175 @@
         <tr>
         
               <td class='tb_subitem'>
-                  Vinho gaseificado
+                Vinho licoroso
               </td> 
               <td class='tb_subitem'>
-                410.215
+                73.600
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Brandy
+              </td> 
+              <td class='tb_subitem'>
+                450
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Destilado
+              </td> 
+              <td class='tb_subitem'>
+                -
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Bagaceira
+              </td> 
+              <td class='tb_subitem'>
+                -
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Licor de bagaceira
+              </td> 
+              <td class='tb_subitem'>
+                -
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Vinagre
+              </td> 
+              <td class='tb_subitem'>
+                9.000
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Borra líquida
+              </td> 
+              <td class='tb_subitem'>
+                758.140
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Borra seca
+              </td> 
+              <td class='tb_subitem'>
+                17.200
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Vinho Composto
+              </td> 
+              <td class='tb_subitem'>
+                -
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Pisco
+              </td> 
+              <td class='tb_subitem'>
+                -
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Vinho orgânico
+              </td> 
+              <td class='tb_subitem'>
+                94.150
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Espumante orgânico
+              </td> 
+              <td class='tb_subitem'>
+                1.365
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Destilado alcoólico simples de bagaceira
+              </td> 
+              <td class='tb_subitem'>
+                -
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Vinho acidificado
+              </td> 
+              <td class='tb_subitem'>
+                2.500
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Mosto parcialmente fermentado
+              </td> 
+              <td class='tb_subitem'>
+                -
+              </td> 
+            
+        </tr>   
+        
+        <tr>
+        
+              <td class='tb_subitem'>
+                Outros derivados
+              </td> 
+              <td class='tb_subitem'>
+                652.301
               </td> 
             
         </tr>   
@@ -838,20 +717,20 @@
             Total
           </td>
           <td>
-            472.291.085
+            457.792.870
           </td>
         </tr>
       </tfoot>
     </table>
    
     <div class='tb_font'>
-      Fonte: União Brasileira de Vitivinicultura - UVIBRA <br> Elaboração: EMBRAPA/CNPUV <br> Obs: A partir de 1997 houve o desdobramento do item Espumnte em Espumante moscatel e Espumante. <br> Obs: Em 2007 foi incluido o Vinho Tinto Vinífera do Prêmio de Escoamento da Produção do Governo Federal - PEP <br>  
+      Fonte: União Brasileira de Vitivinicultura - UVIBRA <br> Elaboração: EMBRAPA/CNPUV <br>  
     </div>
   
     <table class='tb_base tb_link no_print'>
       <tr>
         <td>
-          <a class='footer_content' href='download/Comercio.csv' target='_blank'>
+          <a class='footer_content' href='download/Producao.csv' target='_blank'>
             <img src='figures/download.png' alt='' width='16' height='16'>
             <span class='spn_small'>DOWNLOAD</span>
           </a>

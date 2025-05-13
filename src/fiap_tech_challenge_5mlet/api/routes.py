@@ -4,12 +4,16 @@ from typing import Literal
 from ..scraper import (
     get_comercializacao_data,
     get_processamento_data,
-    get_producao_data
+    get_producao_data,
+    get_exportacao_data,
+    get_importacao_data
 )
 from ..models import (
     ComercializacaoResponse,
     ProducaoResponse,
-    ProcessamentoResponse
+    ProcessamentoResponse,
+    ExportacaoResponse,
+    ImportacaoResponse
 )
 from ..auth import (
     require_token
@@ -132,3 +136,67 @@ def producao(year: int = 2023) -> ProducaoResponse:
         specified year.
     """
     return get_producao_data(year)
+
+# Create Endpoint: GET /exportacao
+@router.get("/exportacao",
+            response_model=ExportacaoResponse,
+            tags=["Exportação"],
+            dependencies=[Depends(require_token)])
+def exportacao(
+    year: int = 2023,
+    category: Literal[
+        "vinhos_de_mesa",
+        "espumantes",
+        "uvas_frescas",
+        "suco_de_uva"
+    ] = "vinhos_de_mesa",
+) -> ExportacaoResponse:
+    """
+    Endpoint to retrieve parsed 'Exportação' data from Embrapa
+    for a given year and category.
+
+    Args:
+        year (int): The year of data to retrieve.
+        category (str): The category to filter by (vinhos_de_mesa,
+                                                   espumantes,
+                                                   uvas_frescas,
+                                                   suco_de_uva)
+
+    Returns:
+        list[dict]: Structured exportação data for the specified year
+        and category.
+    """
+    return get_exportacao_data(year, category)
+
+# Create Endpoint: GET /importacao
+@router.get("/importacao",
+            response_model=ImportacaoResponse,
+            tags=["Importação"],
+            dependencies=[Depends(require_token)])
+def importacao(
+    year: int = 2023,
+    category: Literal[
+        "vinhos_de_mesa",
+        "espumantes",
+        "uvas_frescas",
+        "uvas_passas",
+        "suco_de_uva"
+    ] = "vinhos_de_mesa",
+) -> ImportacaoResponse:
+    """
+    Endpoint to retrieve parsed 'Importação' data from Embrapa
+    for a given year and category.
+
+    Args:
+        year (int): The year of data to retrieve.
+        category (str): The category to filter by (vinhos_de_mesa,
+                                                   espumantes,
+                                                   uvas_frescas,
+                                                   uvas_passas,
+                                                   suco_de_uva)
+
+    Returns:
+        list[dict]: Structured importação data for the specified year
+        and category.
+    """
+    return get_importacao_data(year, category)
