@@ -49,7 +49,7 @@ def get_processamento_data(year: int, category: str) -> list[dict]:
     except RuntimeError:
         raise HTTPException(status_code=503,
                             detail=(
-                                "Unable to access Embrapa websitesite "
+                                "Unable to access Embrapa website "
                                 "or cache for processamento."))
 
     data = parse_processamento(html)

@@ -11,6 +11,7 @@ CATEGORIES_EXPORTACAO = {
     "suco_de_uva": "subopt_04"
 }
 
+
 def get_exportacao_data(year: int, category: str) -> list[dict]:
     """
     Retrieves and parses 'Processamento' data for a given year and category
@@ -28,32 +29,34 @@ def get_exportacao_data(year: int, category: str) -> list[dict]:
     """
     if category not in CATEGORIES_EXPORTACAO:
         raise HTTPException(
-            status_code=400, 
+            status_code=400,
             detail=(
-                "Categoria inválida. Escolha entre: vinhos_de_mesa, espumantes, uvas_frescas, suco_de_uva."
+                """Invalid category. Choose one of: vinhos_de_mesa,
+                  espumantes, uvas_frescas, suco_de_uva."""
                 )
             )
 
     suboption = CATEGORIES_EXPORTACAO[category]
     url = (
-        f"http://vitibrasil.cnpuv.embrapa.br/index.php?year={year}&suboption={suboption}&opcao=opt_06"
+        f"http://vitibrasil.cnpuv.embrapa.br/index.php"
+        f"?ano={year}&opcao=opt_06&subopcao={suboption}"
     )
 
-    cache_filename = f"processamento_{category}_{year}.html"
+    cache_filename = f"exportacao_{category}_{year}.html"
 
     try:
         html = fetch_or_cache(url, cache_filename)
     except RuntimeError:
         raise HTTPException(status_code=503,
                             detail=(
-                                "Unable to access Embrapa websitesite "
-                                "or cache for processamento."))
+                                "Unable to access Embrapa website "
+                                "or cache for exportação data."))
 
     data = parse_exportacao(html)
 
     if not data:
         raise HTTPException(status_code=404,
-                            detail=("No processamento data found for category "
+                            detail=("No exportação data found for category "
                                     f"'{category}' in year {year}."))
 
     return data

@@ -1,9 +1,11 @@
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
 
+
 def parse_exportacao(html: str) -> list[dict]:
     """
-    Parses the HTML content from Embrapa's 'Exportação' page and returns a list of countries with their respective quantities and values.
+    Parses the HTML content from Embrapa's 'Exportação' page and returns a
+    list of countries with their respective quantities and values.
 
     Args:
         html (str): Raw HTML string from the Embrapa page.
@@ -12,13 +14,15 @@ def parse_exportacao(html: str) -> list[dict]:
         list[dict]: A list of export data, including a total item.
 
     Raises:
-        HTTPException: If the data table is not found or contains only empty values.
+        HTTPException: If the data table is not found or
+        contains only empty values.
     """
     soup = BeautifulSoup(html, "html.parser")
 
     table = soup.find("table", class_="tb_base tb_dados")
     if not table:
-        raise HTTPException(status_code=404, detail="Exportação table not found.")
+        raise HTTPException(status_code=404,
+                            detail="Exportação table not found.")
 
     results = []
 
@@ -28,8 +32,12 @@ def parse_exportacao(html: str) -> list[dict]:
             continue
 
         country = cols[0].get_text(strip=True)
-        quantity = cols[1].get_text(strip=True).replace(".", "").replace(",", ".")
-        value = cols[2].get_text(strip=True).replace(".", "").replace(",", ".")
+        quantity = cols[1].get_text(strip=True) \
+            .replace(".", "") \
+            .replace(",", ".")
+        value = cols[2].get_text(strip=True) \
+            .replace(".", "") \
+            .replace(",", ".")
 
         if quantity == "-" and value == "-":
             continue
@@ -38,7 +46,7 @@ def parse_exportacao(html: str) -> list[dict]:
             "country": country,
             "quantity_kg": float(quantity) if quantity != "-" else None,
             "value_usd": float(value) if value != "-" else None,
-            "subproducts": [] 
+            "subproducts": []
         })
 
     tfoot = table.find("tfoot", class_="tb_total")
@@ -46,14 +54,22 @@ def parse_exportacao(html: str) -> list[dict]:
         total_row = tfoot.find("tr")
         total_cols = total_row.find_all("td")
         if len(total_cols) == 3:
-            total_quantity = total_cols[1].get_text(strip=True).replace(".", "").replace(",", ".")
-            total_value = total_cols[2].get_text(strip=True).replace(".", "").replace(",", ".")
-            results.append({
+            total_quantity = total_cols[1].get_text(strip=True) \
+                .replace(".", "") \
+                .replace(",", ".")
+            total_value = total_cols[2].get_text(strip=True) \
+                .replace(".", "") \
+                .replace(",", ".")
+
+            total_entry = {
                 "country": "Total",
                 "quantity_kg": float(total_quantity),
                 "value_usd": float(total_value),
-                "subproducts": [] 
-            })
+                "subproducts": []
+            }
+
+            if total_entry not in results:
+                results.append(total_entry)
 
     if not results:
         raise HTTPException(

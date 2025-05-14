@@ -22,7 +22,7 @@ from ..auth import (
 router = APIRouter()
 
 
-@router.get("/", 
+@router.get("/",
             response_class=HTMLResponse,
             tags=["Root"])
 def read_root():
@@ -32,7 +32,8 @@ def read_root():
             <title>🍇 FIAP Tech Challenge 5MLET</title>
             <style>
                 body {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
+                    sans-serif;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -59,7 +60,8 @@ def read_root():
         <body>
             <h1>🍇 FIAP Tech Challenge 5MLET API</h1>
             <p><b>Welcome to the Embrapa Vitivinicultura data API 🎉</b></p>
-            <p>🔐 Authenticated endpoints available at <a href='/docs'>/docs</a></p>
+            <p>🔐 Authenticated endpoints available at <a href='/docs'>/docs
+            </a></p>
         </body>
     </html>
     """
@@ -137,6 +139,7 @@ def producao(year: int = 2023) -> ProducaoResponse:
     """
     return get_producao_data(year)
 
+
 # Create Endpoint: GET /exportacao
 @router.get("/exportacao",
             response_model=ExportacaoResponse,
@@ -167,6 +170,7 @@ def exportacao(
         and category.
     """
     return get_exportacao_data(year, category)
+
 
 # Create Endpoint: GET /importacao
 @router.get("/importacao",

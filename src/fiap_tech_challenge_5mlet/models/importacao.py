@@ -1,23 +1,11 @@
-from typing import List, Union
+from typing import List, Optional
 from pydantic import BaseModel
-
-class ImportacaoSubproduct(BaseModel):
-    product: str
-    value_usd: Union[float, None] 
 
 
 class ImportacaoItem(BaseModel):
     country: str
-    quantity_kg: Union[float, None] 
-    subproducts: List[ImportacaoSubproduct]
+    quantity_kg: Optional[float]
+    value_usd: Optional[float]
 
 
-class ImportacaoTotal(BaseModel):
-    total_overall: str
-
-ImportacaoResponse = List[
-    Union[
-        ImportacaoItem,
-        ImportacaoTotal
-    ]
-]
+ImportacaoResponse = List[ImportacaoItem]
