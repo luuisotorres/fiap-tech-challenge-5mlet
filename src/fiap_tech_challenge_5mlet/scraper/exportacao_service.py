@@ -1,19 +1,18 @@
 from fastapi import HTTPException
 from ..scraper import fetch_or_cache
 from ..utils import (
-    parse_processamento
-)
+    parse_exportacao
+    )
 
-# Mapping of available categories to their sub-option identifiers
-CATEGORIES = {
-    "viniferas": "subopt_01",
-    "americanas_hibridas": "subopt_02",
-    "uvas_de_mesa": "subopt_03",
-    "sem_classificacao": "subopt_04"
+CATEGORIES_EXPORTACAO = {
+    "vinhos_de_mesa": "subopt_01",
+    "espumantes": "subopt_02",
+    "uvas_frescas": "subopt_03",
+    "suco_de_uva": "subopt_04"
 }
 
 
-def get_processamento_data(year: int, category: str) -> list[dict]:
+def get_exportacao_data(year: int, category: str) -> list[dict]:
     """
     Retrieves and parses 'Processamento' data for a given year and category
     from Embrapa, using a cached version when available.
@@ -28,21 +27,22 @@ def get_processamento_data(year: int, category: str) -> list[dict]:
     Raises:
         HTTPException: If the category is invalid or data is unavailable.
     """
-    if category not in CATEGORIES:
+    if category not in CATEGORIES_EXPORTACAO:
         raise HTTPException(
             status_code=400,
             detail=(
-                "Invalid category. Choose one of: viniferas"
-                ", americanas_hibridas, uvas_de_mesa, sem_classificacao."
+                """Invalid category. Choose one of: vinhos_de_mesa,
+                  espumantes, uvas_frescas, suco_de_uva."""
                 )
-        )
+            )
 
-    suboption = CATEGORIES[category]
+    suboption = CATEGORIES_EXPORTACAO[category]
     url = (
         f"http://vitibrasil.cnpuv.embrapa.br/index.php"
-        f"?ano={year}&opcao=opt_03&subopcao={suboption}"
+        f"?ano={year}&opcao=opt_06&subopcao={suboption}"
     )
-    cache_filename = f"processamento_{category}_{year}.html"
+
+    cache_filename = f"exportacao_{category}_{year}.html"
 
     try:
         html = fetch_or_cache(url, cache_filename)
@@ -50,13 +50,13 @@ def get_processamento_data(year: int, category: str) -> list[dict]:
         raise HTTPException(status_code=503,
                             detail=(
                                 "Unable to access Embrapa website "
-                                "or cache for processamento."))
+                                "or cache for exportação data."))
 
-    data = parse_processamento(html)
+    data = parse_exportacao(html)
 
     if not data:
         raise HTTPException(status_code=404,
-                            detail=("No processamento data found for category "
+                            detail=("No exportação data found for category "
                                     f"'{category}' in year {year}."))
 
     return data
