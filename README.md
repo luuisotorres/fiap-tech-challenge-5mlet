@@ -32,7 +32,7 @@ This project was built as part of the Machine Learning Engineering postgrad chal
 ## Features
 
 - `/login` for JWT token authentication
-- `/producao`, `/processamento`, `/comercializacao` endpoints with structured BaseModel responses
+- `/producao`, `/processamento`, `/comercializacao`, `/importacao` and `/exportacao` endpoints with structured BaseModel responses
 - Swagger and ReDoc API docs included
 - Data scraped and parsed directly from Vitibrasil HTML tables
 - Environment variable management with `.env` support
@@ -89,6 +89,8 @@ Authenticated routes include:
 - `GET /comercializacao?year=2023`
 - `GET /processamento?year=2023&category=viniferas`
 - `GET /producao?year=2023`
+- `GET /importacao?year=2023&category=vinhos_de_mesa`
+- `GET /exportacao?year=2023&category=vinhos_de_mesa`
 
 **Possible HTTP Status Codes for endpoints:**
 - 200 OK: Request succeeded
@@ -98,6 +100,9 @@ Authenticated routes include:
 
 Send a `GET` request to `/comercializacao` to get data for default year`2023`:
 ![postman-comercializacao](assets/post-comercializacao.png)
+
+The following flowchart illustrates how the API functions.
+![api-flowchart](assets/api-flowchart.png)
 
 ## Docs Interface:
 
@@ -201,6 +206,40 @@ curl -sSL https://install.python-poetry.org | python3 -
 This API is live and publicly accessible via [Render](https://render.com), a platform that makes it easy to deploy web apps, APIs, and background workers with minimal configuration.
 
 👉 **[Try it on Render](https://fiap-tech-challenge-5mlet.onrender.com)** — no setup required, just explore the live API!
+
+---
+
+
+## Machine Learning Pipeline
+
+Embrapa's data will be used to feed a forecasting model.
+
+Our API will be consumed at scheduled intervals, and the retrieved data will be stored in a database.
+
+This data will then undergo an ETL process to generate relevant features for use in the machine learning model.
+
+Finally, predictions will be made available through a `/predict` endpoint, and the results will also be stored back in the database.
+
+The following diagram provides an overview of the application's workflow.
+![ml-diagram](assets/ml-diagram.png)
+
+### 1. Data Ingestion
+
+Data will be made available through our application and served via an API hosted on Render.
+A scheduler — such as AWS Lambda, a cron job, or Apache Airflow — will periodically call this API to retrieve the data.
+
+
+### 2. Data Storage and ETL
+
+Each time the API is called, the raw data will be stored in an S3 bucket (raw layer).
+Using AWS Glue, Apache Airflow, or equivalent orchestration tools — alongside libraries such as Pandas and NumPy — the data will be cleaned and transformed as needed.
+As part of this process, relevant features will be engineered for use in the machine learning model.
+
+### 3. Machine Learning
+
+Models will be trained and evaluated using MLflow, which will also be used to track experiments.
+Model artifacts will be stored in an S3 bucket and consumed during the inference stage.
+A /predict endpoint will be exposed through a FastAPI application, serving predictions to users and storing the results in a predictions table.
 
 ---
 
