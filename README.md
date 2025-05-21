@@ -102,7 +102,7 @@ Send a `GET` request to `/comercializacao` to get data for default year`2023`:
 ![postman-comercializacao](assets/post-comercializacao.png)
 
 The following flowchart illustrates how the API functions.
-![api-flowchart](assets/api_flowchart.png)
+![api-flowchart](assets/api-flowchart.png)
 
 ## Docs Interface:
 
