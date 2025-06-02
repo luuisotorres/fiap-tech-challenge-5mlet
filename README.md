@@ -24,6 +24,8 @@ This project was built as part of the Machine Learning Engineering postgrad chal
 - [Environment Variables](#environment-variables)
 - [Poetry Usage](#poetry-usage)
 - [Deployment (Render)](#deployment-render)
+- [Machine Learning Pipeline](#machine-learning-pipeline)
+- [Video Demonstration]
 - [Authors](#authors)
 - [License](#license)
 
@@ -240,6 +242,14 @@ As part of this process, relevant features will be engineered for use in the mac
 Models will be trained and evaluated using MLflow, which will also be used to track experiments.
 Model artifacts will be stored in an S3 bucket and consumed during the inference stage.
 A /predict endpoint will be exposed through a FastAPI application, serving predictions to users and storing the results in a predictions table.
+
+---
+
+## Video Demonstration
+
+Here's a quick video demonstration of the project in action and further explanation:
+
+[![Watch the video](https://img.youtube.com/vi/vAFqORreXL8/0.jpg)](https://www.youtube.com/watch?v=vAFqORreXL8)
 
 ---
 
