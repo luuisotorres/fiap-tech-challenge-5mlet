@@ -25,7 +25,7 @@ This project was built as part of the Machine Learning Engineering postgrad chal
 - [Poetry Usage](#poetry-usage)
 - [Deployment (Render)](#deployment-render)
 - [Machine Learning Pipeline](#machine-learning-pipeline)
-- [Video Demonstration]
+- [Video Demonstration](#video-demonstration)
 - [Authors](#authors)
 - [License](#license)
 
